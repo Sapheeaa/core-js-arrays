@@ -406,8 +406,9 @@ function getElementByIndices(arr, indices) {
  *  getFalsyValuesCount([ -1, 'false', null, 0 ]) => 2
  *  getFalsyValuesCount([ null, undefined, NaN, false, 0, '' ]) => 6
  */
-function getFalsyValuesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getFalsyValuesCount(arr) {
+  const trueArr = arr.filter(Boolean);
+  return arr.length - trueArr.length;
 }
 
 /**
@@ -434,7 +435,7 @@ function getIdentityMatrix(/* n */) {
 
 /**
  * Returns an array containing indices of odd elements in the input array.
- *
+ * массив из индексов нечетных элементов
  * @param {number[]} numbers - The array of numbers.
  * @return {number[]} - An array containing indices of odd elements.
  *
@@ -443,8 +444,9 @@ function getIdentityMatrix(/* n */) {
  *    getIndicesOfOddNumbers([2, 4, 6, 8, 10]) => []
  *    getIndicesOfOddNumbers([11, 22, 33, 44, 55]) => [0, 2, 4]
  */
-function getIndicesOfOddNumbers(/* numbers */) {
-  throw new Error('Not implemented');
+function getIndicesOfOddNumbers(numbers) {
+  const evenArr = numbers.map((item, i) => (item % 2 !== 0 ? i : -1));
+  return evenArr.filter((item) => item !== -1);
 }
 
 /**
